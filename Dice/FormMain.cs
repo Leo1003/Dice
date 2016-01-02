@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace Dice
@@ -14,6 +8,12 @@ namespace Dice
         public FormMain()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Random r = new Random(Convert.ToInt32(DateTime.Now.Subtract(new DateTime(1970, 1, 1)).TotalMilliseconds % int.MaxValue));
+            textBox1.Text = r.Next(1, 7).ToString();
         }
     }
 }
